@@ -1,15 +1,22 @@
-import React from 'react'
-import firebaseConfig from '../firebase/config'
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
-    return (
-      <div className="App">
-        <h1>Home</h1>
-        <button onClick={() => firebaseConfig.auth().signOut()}>
-          Sign Out
-        </button>
-      </div>
-    );
+  return (
+    <div className="App">
+      <h3>Hello Guest</h3>
+      <p>
+        Please
+        <span>
+          <Link to="/login"> login</Link>.
+        </span>
+        <p>Don't have an account?</p>
+        <span>
+          <Link to="/signup">Sign up here!</Link>
+        </span>
+      </p>
+    </div>
+  );
 }
 
-export default Home
+export default Home;
